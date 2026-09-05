@@ -533,6 +533,46 @@ body {
   margin-bottom: 1rem;
 }
 
+/* Mount feature */
+
+.mount-feature {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.mount-feature-img {
+  width: 140px;
+  height: 100px;
+  object-fit: contain;
+  flex-shrink: 0;
+  border-radius: 8px;
+}
+
+.mount-feature-text h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1.05rem;
+}
+
+.mount-feature-text p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 520px) {
+  .mount-feature {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
 /* Steps */
 
 .steps {
