@@ -1167,6 +1167,14 @@ body.has-recent-tray {
 .photo-ohiostate { background-image: url('assets/boards/ohio-state-buckeyes.webp'); }
 .photo-pennstate { background-image: url('assets/boards/penn-state.webp'); }
 .photo-notredame { background-image: url('assets/boards/notre-dame.webp'); }
+.photo-alabama { background-image: url('assets/boards/alabama.webp'); }
+.photo-knicks { background-image: url('assets/boards/knicks.webp'); }
+.photo-sixers { background-image: url('assets/boards/sixers.webp'); }
+.photo-mavericks { background-image: url('assets/boards/mavericks.webp'); }
+.photo-heat { background-image: url('assets/boards/heat.webp'); }
+.photo-lakers { background-image: url('assets/boards/lakers.webp'); }
+.photo-timberwolves { background-image: url('assets/boards/timberwolves.webp'); }
+.photo-texaslonghorns { background-image: url('assets/boards/texas-longhorns.webp'); }
 
 
 .form-note {
