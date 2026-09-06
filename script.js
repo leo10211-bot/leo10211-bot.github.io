@@ -65,6 +65,11 @@ startAutoplay();
 /* Quick-view drawer + checkout */
 
 const shopCards = [...document.querySelectorAll('.shop-card')];
+
+const boardCountEl = document.getElementById('board-count');
+if (boardCountEl) {
+  boardCountEl.textContent = `${shopCards.length} designs`;
+}
 const drawer = document.getElementById('drawer');
 const drawerOverlay = document.getElementById('drawer-overlay');
 const drawerClose = document.getElementById('drawer-close');
