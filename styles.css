@@ -133,17 +133,24 @@ body {
 }
 
 .ticker-track {
-  display: inline-flex;
+  display: flex;
+  width: max-content;
   animation: tickerScroll 20s linear infinite;
 }
 
-.ticker-track span {
+.ticker-set {
+  display: flex;
+  flex-shrink: 0;
+}
+
+.ticker-set span {
   color: #fff;
   font-size: 0.78rem;
   font-weight: 600;
   letter-spacing: 0.06em;
   padding: 0 0.4rem;
   margin-right: 0.65rem;
+  white-space: nowrap;
 }
 
 @keyframes tickerScroll {

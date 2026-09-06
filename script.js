@@ -13,6 +13,50 @@ revealEls.forEach((el) => revealObserver.observe(el));
 
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+/* Ticker: repeat the set enough times to fill the screen so it never
+   runs out of content and gaps before looping, on any viewport width */
+
+let tickerTemplateNode = null;
+
+function buildTicker() {
+  const ticker = document.getElementById('ticker');
+  const track = document.getElementById('ticker-track');
+  if (!ticker || !track) return;
+
+  if (!tickerTemplateNode) {
+    const original = document.getElementById('ticker-set-template');
+    if (!original) return;
+    tickerTemplateNode = original.cloneNode(true);
+    tickerTemplateNode.removeAttribute('id');
+  }
+
+  if (!track.firstElementChild) {
+    track.appendChild(tickerTemplateNode.cloneNode(true));
+  }
+
+  const setWidth = track.firstElementChild.getBoundingClientRect().width;
+  const containerWidth = ticker.getBoundingClientRect().width;
+  if (setWidth === 0) return;
+
+  const minSets = Math.ceil((containerWidth * 2) / setWidth) + 1;
+  const setCount = minSets % 2 === 0 ? minSets : minSets + 1;
+
+  track.innerHTML = '';
+  for (let i = 0; i < setCount; i++) {
+    track.appendChild(tickerTemplateNode.cloneNode(true));
+  }
+
+  const totalWidth = setWidth * setCount;
+  const pixelsPerSecond = 60;
+  track.style.animationDuration = `${totalWidth / pixelsPerSecond}s`;
+}
+
+buildTicker();
+window.addEventListener('resize', () => {
+  clearTimeout(window._tickerResizeTimer);
+  window._tickerResizeTimer = setTimeout(buildTicker, 200);
+});
+
 /* Carousel */
 
 const track = document.getElementById('carousel-track');
