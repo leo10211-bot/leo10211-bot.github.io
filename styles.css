@@ -1194,6 +1194,9 @@ body.has-recent-tray {
 .photo-lakers { background-image: url('assets/boards/lakers.webp'); }
 .photo-timberwolves { background-image: url('assets/boards/timberwolves.webp'); }
 .photo-texaslonghorns { background-image: url('assets/boards/texas-longhorns.webp'); }
+.photo-broncos { background-image: url('assets/boards/broncos.webp'); }
+.photo-buccaneers { background-image: url('assets/boards/buccaneers.webp'); }
+.photo-eagles { background-image: url('assets/boards/eagles.webp'); }
 
 
 .form-note {
